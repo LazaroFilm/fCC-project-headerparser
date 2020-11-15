@@ -5,7 +5,6 @@
 const express = require('express');
 const app = express();
 const useragent = require('express-useragent');
-const expressPublicIp = require('express-public-ip');
 
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
@@ -31,7 +30,6 @@ app.get("/api/hello", function (req, res) {
 // my code
 app.enable('trust proxy');
  
-app.use(expressPublicIp());
 app.use(useragent.express());
 app.set('trust proxy', true)
 
